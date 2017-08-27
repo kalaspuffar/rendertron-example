@@ -1,7 +1,6 @@
 # Require
 
-* nodejs
-* npm
+* nodejs >=7.6
 
 # Install rendertron
 ```

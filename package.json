@@ -3,7 +3,12 @@
   "version": "1.0.0",
   "description": "Example on how to use rendertron",
   "main": "index.js",
+  "files": [
+    "index.js",
+    "news"
+  ],
   "scripts": {
+    "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -21,6 +26,8 @@
   },
   "homepage": "https://github.com/kalaspuffar/rendertron-example#readme",
   "dependencies": {
-    "express": "^4.15.4"
+    "express": "^4.15.4",
+    "path": "^0.12.7",
+    "rendertron-middleware": "^0.1.1"
   }
 }

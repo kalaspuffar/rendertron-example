@@ -1,6 +1,23 @@
-var express = require('express');
-var app = express();
+const express = require('express');
+const rendertron = require('rendertron-middleware');
+const path = require('path');
+const app = express();
 
-app.use(express.static('news'));
+app.use(rendertron.makeMiddleware({
+  proxyUrl: 'https://render-tron.appspot.com/render',
+  injectShadyDom: true
+}));
 
-app.listen(8080);
+app.use('/bower_components', express.static(path.resolve(__dirname, 'news/bower_components')));
+app.use('/data', express.static(path.resolve(__dirname, 'news/data')));
+app.use('/src', express.static(path.resolve(__dirname, 'news/src')));
+app.use('/manifest.json', express.static(path.resolve(__dirname, 'news/manifest.json')));
+app.use('/service-worker.js', express.static(path.resolve(__dirname, 'news/service-worker.js')));
+app.get('/*', (request, response) => {
+  response.sendFile(path.resolve(__dirname, 'news/index.html'));
+});
+
+const port = process.env.PORT || '8080';
+app.listen(port, function() {
+  console.log('Listening on port', port);
+});
