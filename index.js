@@ -4,7 +4,7 @@ const path = require('path');
 const app = express();
 
 app.use(rendertron.makeMiddleware({
-  proxyUrl: 'https://render-tron.appspot.com/render',
+  proxyUrl: 'http://localhost:3000/render',
   injectShadyDom: true
 }));
 
