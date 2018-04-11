@@ -17,5 +17,8 @@ git clone --recurse-submodules http://github.com/kalaspuffar/rendertron-example.
 npm install
 npm start
 ```
-#
-#
+
+If you are using a version of git lower than 2.13 you want to use
+```
+git clone --recursive http://github.com/kalaspuffar/rendertron-example.git
+```
