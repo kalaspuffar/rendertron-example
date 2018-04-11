@@ -13,7 +13,7 @@ npm start
 ```
 # Install application
 ```
-git clone --recursive http://github.com/kalaspuffar/rendertron-example.git
+git clone --recurse-submodules http://github.com/kalaspuffar/rendertron-example.git
 npm install
 npm start
 ```
